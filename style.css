@@ -196,3 +196,253 @@ header{
 .banner button:hover{
     transform:scale(1.05);
 }
+/* =====================================
+   SECTION HEADINGS
+===================================== */
+
+section{
+    margin-bottom:45px;
+}
+
+.section-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:22px;
+}
+
+.section-title h2{
+    font-size:28px;
+    font-weight:700;
+}
+
+.section-title a{
+    text-decoration:none;
+    color:#1DB954;
+    font-size:15px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.section-title a:hover{
+    color:#ffffff;
+}
+
+/* =====================================
+   SONG CARDS
+===================================== */
+
+.card-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(190px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#181818;
+    border-radius:18px;
+    padding:18px;
+    transition:0.35s ease;
+    cursor:pointer;
+}
+
+.card:hover{
+    background:#282828;
+    transform:translateY(-8px);
+    box-shadow:0 12px 30px rgba(0,0,0,.45);
+}
+
+.card img{
+    width:100%;
+    height:190px;
+    border-radius:15px;
+    object-fit:cover;
+}
+
+.card h3{
+    margin-top:15px;
+    font-size:18px;
+    font-weight:600;
+}
+
+.card p{
+    margin-top:6px;
+    color:#b3b3b3;
+    font-size:14px;
+    line-height:22px;
+}
+
+/* =====================================
+   ARTISTS
+===================================== */
+
+.artist-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
+    gap:28px;
+}
+
+.artist{
+    text-align:center;
+    cursor:pointer;
+    transition:.35s;
+}
+
+.artist:hover{
+    transform:translateY(-8px);
+}
+
+.artist img{
+    width:150px;
+    height:150px;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid #1DB954;
+    transition:.35s;
+}
+
+.artist:hover img{
+    transform:scale(1.06);
+}
+
+.artist h4{
+    margin-top:14px;
+    font-size:18px;
+}
+
+/* =====================================
+   PLAYER
+===================================== */
+
+.player{
+    position:fixed;
+    bottom:0;
+    left:250px;
+    right:0;
+    height:90px;
+
+    background:#181818;
+
+    border-top:1px solid #333;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:15px 35px;
+
+    z-index:999;
+}
+
+/* Song */
+
+.song{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.song img{
+    width:60px;
+    height:60px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.song h4{
+    font-size:16px;
+    margin-bottom:4px;
+}
+
+.song p{
+    color:#aaa;
+    font-size:13px;
+}
+
+/* Controls */
+
+.controls{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+.controls i{
+    font-size:22px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.controls i:hover{
+    color:#1DB954;
+}
+
+.play{
+    font-size:42px !important;
+}
+
+/* Volume */
+
+.volume{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.volume i{
+    font-size:20px;
+}
+
+.volume input{
+    width:130px;
+    accent-color:#1DB954;
+}
+
+/* =====================================
+   SCROLLBAR
+===================================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#1DB954;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#20d760;
+}
+
+/* =====================================
+   ANIMATIONS
+===================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+.banner,
+.card,
+.artist{
+    animation:fadeUp .8s ease;
+}
