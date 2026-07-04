@@ -124,3 +124,207 @@ playBtn.addEventListener("click",()=>{
     }
 
 });
+// ==========================================
+// NEXT SONG
+// ==========================================
+
+function nextSong() {
+
+    currentSong++;
+
+    if (currentSong >= songs.length) {
+        currentSong = 0;
+    }
+
+    loadSong(currentSong);
+
+    if (playing) {
+        audio.play();
+    }
+
+}
+
+nextBtn.addEventListener("click", nextSong);
+
+// ==========================================
+// PREVIOUS SONG
+// ==========================================
+
+function previousSong() {
+
+    currentSong--;
+
+    if (currentSong < 0) {
+        currentSong = songs.length - 1;
+    }
+
+    loadSong(currentSong);
+
+    if (playing) {
+        audio.play();
+    }
+
+}
+
+backBtn.addEventListener("click", previousSong);
+
+// ==========================================
+// AUTO PLAY NEXT SONG
+// ==========================================
+
+audio.addEventListener("ended", () => {
+
+    nextSong();
+
+});
+
+// ==========================================
+// VOLUME
+// ==========================================
+
+audio.volume = 0.7;
+
+volume.value = 70;
+
+volume.addEventListener("input", () => {
+
+    audio.volume = volume.value / 100;
+
+});
+
+// ==========================================
+// PLAY SONG WHEN CARD IS CLICKED
+// ==========================================
+
+const cards = document.querySelectorAll(".card");
+
+cards.forEach((card, index) => {
+
+    card.addEventListener("click", () => {
+
+        currentSong = index;
+
+        loadSong(currentSong);
+
+        playSong();
+
+        playing = true;
+
+    });
+
+});
+
+// ==========================================
+// SPACEBAR PLAY / PAUSE
+// ==========================================
+
+document.addEventListener("keydown", (event) => {
+
+    if (event.code === "Space") {
+
+        event.preventDefault();
+
+        if (playing) {
+
+            pauseSong();
+
+            playing = false;
+
+        } else {
+
+            playSong();
+
+            playing = true;
+
+        }
+
+    }
+
+});
+
+// ==========================================
+// DOUBLE CLICK TO LIKE SONG
+// ==========================================
+
+cards.forEach(card => {
+
+    card.addEventListener("dblclick", () => {
+
+        card.classList.toggle("liked");
+
+    });
+
+});
+
+// ==========================================
+// HOVER EFFECT
+// ==========================================
+
+cards.forEach(card => {
+
+    card.addEventListener("mouseenter", () => {
+
+        card.style.transform = "translateY(-10px)";
+
+    });
+
+    card.addEventListener("mouseleave", () => {
+
+        card.style.transform = "";
+
+    });
+
+});
+
+// ==========================================
+// SEARCH BAR (Frontend Only)
+// ==========================================
+
+const searchInput = document.querySelector(".search-box input");
+
+searchInput.addEventListener("keyup", () => {
+
+    const value = searchInput.value.toLowerCase();
+
+    cards.forEach(card => {
+
+        const title = card.querySelector("h3").innerText.toLowerCase();
+
+        const artist = card.querySelector("p").innerText.toLowerCase();
+
+        if (
+            title.includes(value) ||
+            artist.includes(value)
+        ) {
+
+            card.style.display = "block";
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+});
+
+// ==========================================
+// START BUTTON
+// ==========================================
+
+const startButton = document.querySelector(".banner button");
+
+startButton.addEventListener("click", () => {
+
+    playSong();
+
+    playing = true;
+
+});
+
+// ==========================================
+// READY
+// ==========================================
+
+console.log("Melody Music App Loaded Successfully!");
