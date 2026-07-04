@@ -1,0 +1,198 @@
+/* ==========================
+   Google Font
+========================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#121212;
+    color:#fff;
+    display:flex;
+    overflow:hidden;
+}
+
+/* ==========================
+   Sidebar
+========================== */
+
+.sidebar{
+    width:250px;
+    height:100vh;
+    background:#000;
+    padding:25px;
+    display:flex;
+    flex-direction:column;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:45px;
+}
+
+.logo i{
+    color:#1DB954;
+    font-size:34px;
+}
+
+.logo h2{
+    font-size:28px;
+    font-weight:700;
+}
+
+.sidebar nav{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.sidebar nav a{
+    color:#b3b3b3;
+    text-decoration:none;
+    padding:14px 18px;
+    border-radius:12px;
+    transition:.3s;
+    font-size:17px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.sidebar nav a:hover{
+    background:#1d1d1d;
+    color:white;
+}
+
+.sidebar nav .active{
+    background:#1DB954;
+    color:white;
+}
+
+.sidebar nav i{
+    font-size:20px;
+}
+
+/* ==========================
+   Main
+========================== */
+
+.main{
+    flex:1;
+    overflow-y:auto;
+    padding:35px;
+    padding-bottom:120px;
+}
+
+/* ==========================
+   Header
+========================== */
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:35px;
+}
+
+.search-box{
+    background:#222;
+    width:420px;
+    height:48px;
+    border-radius:30px;
+    display:flex;
+    align-items:center;
+    padding:0 20px;
+}
+
+.search-box i{
+    color:#aaa;
+}
+
+.search-box input{
+    flex:1;
+    margin-left:12px;
+    background:none;
+    border:none;
+    outline:none;
+    color:white;
+    font-size:15px;
+}
+
+.user{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.premium{
+    background:#1DB954;
+    color:white;
+    border:none;
+    padding:12px 28px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.premium:hover{
+    transform:scale(1.05);
+}
+
+.user img{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    object-fit:cover;
+    cursor:pointer;
+}
+
+/* ==========================
+   Banner
+========================== */
+
+.banner{
+    width:100%;
+    height:260px;
+    border-radius:25px;
+    background:linear-gradient(135deg,#1DB954,#0b6b31);
+    display:flex;
+    align-items:center;
+    padding:50px;
+    margin-bottom:40px;
+}
+
+.banner-text h1{
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+.banner-text p{
+    font-size:18px;
+    margin-bottom:25px;
+    color:#f0f0f0;
+}
+
+.banner button{
+    padding:14px 35px;
+    border:none;
+    border-radius:30px;
+    background:white;
+    color:#111;
+    font-size:16px;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+}
+
+.banner button:hover{
+    transform:scale(1.05);
+}
