@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile | Melody</title>
+
+    <link rel="stylesheet" href="css/profile.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <h2>🎵 Melody</h2>
+
+        <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            Home
+        </a>
+
+        <a href="search.html">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            Search
+        </a>
+
+        <a href="playlist.html">
+            <i class="fa-solid fa-list"></i>
+            Playlist
+        </a>
+
+        <a href="liked.html">
+            <i class="fa-solid fa-heart"></i>
+            Liked Songs
+        </a>
+
+        <a class="active">
+            <i class="fa-solid fa-user"></i>
+            Profile
+        </a>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main>
+
+        <div class="profile-card">
+
+            <img
+                src="images/profile.png"
+                alt="Profile"
+                id="profileImage">
+
+            <h2 id="profileName">
+
+                User Name
+
+            </h2>
+
+            <p id="profileEmail">
+
+                user@email.com
+
+            </p>
+
+            <div class="stats">
+
+                <div>
+
+                    <h3 id="playlistCount">
+
+                        0
+
+                    </h3>
+
+                    <span>Playlists</span>
+
+                </div>
+
+                <div>
+
+                    <h3 id="likedCount">
+
+                        0
+
+                    </h3>
+
+                    <span>Liked Songs</span>
+
+                </div>
+
+            </div>
+
+            <button id="logoutBtn">
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="js/profile.js"></script>
+
+</body>
+
+</html>
